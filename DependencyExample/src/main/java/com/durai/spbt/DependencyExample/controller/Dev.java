@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Dev {
-    private Laptop laptop;
+    //private Laptop laptop;
     //3 ways of Dependency Injection
 
     /*1. Constructor Injection*/
@@ -20,11 +20,15 @@ public class Dev {
     /*2. Setter Injection using @autowired
     Auto wire is used to connect Dev to Laptop class basically it connects the reference
     * */
-    @Autowired
-    public void setLaptop(Laptop laptop) {
-        this.laptop = laptop;
-    }
+//    @Autowired
+//    public void setLaptop(Laptop laptop) {
+//        this.laptop = laptop;
+//    }
 
+
+    //Field Injection using @Autowired but not recommended in standard practice
+    @Autowired
+    private Laptop laptop;
 
     public void code(){
     System.out.println("Developer is coding");
