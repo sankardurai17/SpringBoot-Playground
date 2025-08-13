@@ -6,12 +6,14 @@
 
     <!--- In order to connect laptop to dev have to inject dependency -->
        <bean id="dev" class="org.example.Dev">
-          <!--- use constructor-arg   -->
-        <constructor-arg ref="laptop"/>
+          <!--- use constructor-arg
+        <constructor-arg ref="lap1"/> -->
+           <!--- Use property tag for setters -->
+         <property name="laptop" ref="lap1"/>
     </bean>
 
 
-    <bean id="laptop" class="org.example.Laptop">
+    <bean id="lap1" class="org.example.Laptop">
     </bean>
 
 </beans>

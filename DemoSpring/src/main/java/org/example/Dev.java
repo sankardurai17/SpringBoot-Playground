@@ -9,12 +9,18 @@ public class Dev {
         System.out.println("Dev Constructor");
     }
     /*1. Dependency Inject by Constructor*/
-    public Dev(Laptop laptop) {
+ /*   public Dev(Laptop laptop) {
+        this.laptop = laptop;
+    }*/
+
+    //Dependency Injection by setter
+    public void setLaptop(Laptop laptop){
         this.laptop = laptop;
     }
 
     public void code(){
-        laptop.compile();
         System.out.println("Developer is coding");
+        laptop.compile();
+
     }
 }
