@@ -4,8 +4,14 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!--- In order to connect laptop to dev have to inject dependency -->
+       <bean id="dev" class="org.example.Dev">
+          <!--- use constructor-arg   -->
+        <constructor-arg ref="laptop"/>
+    </bean>
 
-    <bean id="dev" class="org.example.Dev">
+
+    <bean id="laptop" class="org.example.Laptop">
     </bean>
 
 </beans>
