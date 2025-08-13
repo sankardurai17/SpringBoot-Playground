@@ -3,7 +3,10 @@ package org.example;
 public class Dev {
     /*To use the Laptop functionalities we need to create a bean for Laptop in spring config .xml and inject the dependency
     to Dev class. It can be done as usual in three ways constructor, setter and autowire by name / by type*/
-    private Laptop laptop;
+
+    //private Laptop laptop;
+
+    private Computer computer;
 
     public Dev(){
         System.out.println("Dev Constructor");
@@ -14,13 +17,18 @@ public class Dev {
     }*/
 
     //Dependency Injection by setter
-    public void setLaptop(Laptop laptop){
-        this.laptop = laptop;
+//    public void setLaptop(Laptop laptop){
+//        this.laptop = laptop;
+//    }
+
+
+    public void setComputer(Computer computer) {
+        this.computer = computer;
     }
 
     public void code(){
         System.out.println("Developer is coding");
-        laptop.compile();
+        computer.compile();
 
     }
 }

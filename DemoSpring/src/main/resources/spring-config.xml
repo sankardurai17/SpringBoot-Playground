@@ -5,15 +5,23 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--- In order to connect laptop to dev have to inject dependency -->
-       <bean id="dev" class="org.example.Dev">
+       <bean id="dev" class="org.example.Dev" autowire="byType">
           <!--- use constructor-arg
         <constructor-arg ref="lap1"/> -->
-           <!--- Use property tag for setters -->
-         <property name="laptop" ref="lap1"/>
+           <!--- Use property tag for setters
+         <property name="computer" ref="lap1"/> -->
     </bean>
 
-
+<!---
     <bean id="lap1" class="org.example.Laptop">
+    </bean>
+-->
+    <!--- Having same field name for id will workout with autowire="byName"
+     <bean id="dev" class="org.example.Dev" autowire="byName"> -->
+    <bean id="computer" class="org.example.Laptop">
+
+    </bean>
+    <bean id="dev1" class="org.example.Desktop"  primary="true">
     </bean>
 
 </beans>
