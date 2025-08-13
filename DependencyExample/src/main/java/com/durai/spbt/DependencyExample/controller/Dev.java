@@ -3,8 +3,10 @@ package com.durai.spbt.DependencyExample.controller;
 
 /*Inorder to make this class eligible for object creation in the IoC container use @component annotation*/
 
+import com.durai.spbt.DependencyExample.service.Computer;
 import com.durai.spbt.DependencyExample.service.Laptop;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -27,12 +29,23 @@ public class Dev {
 
 
     //Field Injection using @Autowired but not recommended in standard practice
+//    @Autowired
+//    private Laptop laptop;
+
+    /*Using Loose coupling, using Interface type*/
+
     @Autowired
-    private Laptop laptop;
+    @Qualifier("laptop")
+    private Computer computer;
+    //If we didn't mention separately which class to create object it throws 2 beans found.
+    /*Solution use @primary / @Qualifier
+    * @Primary is used on top of the Specific class which implements the interface contract
+    * @Qualifier is used on top of the dependency injection mentioning @Qualifier("reference type name")
+    * */
 
     public void code(){
     System.out.println("Developer is coding");
-        laptop.compile();
+        computer.compile();
     }
 
 }
