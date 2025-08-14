@@ -12,9 +12,14 @@ import java.util.List;
 public class ProductService {
 
     private List<Product> products=new ArrayList<>(Arrays.asList(new Product(100,"iPhone",2000),
-            new Product(101,"Camera",1200), new Product(102,"headPhones",2200)));
+            new Product(101,"Camera",1200),
+            new Product(102,"headPhones",2200)));
 
     public List<Product> getProducts(){
       return products;
+  }
+
+  public Product getProductByID(int id){
+    return products.stream().filter(product -> product.getProdId()==id).findFirst().orElse(new Product(0,"Not Found",0));
   }
 }
