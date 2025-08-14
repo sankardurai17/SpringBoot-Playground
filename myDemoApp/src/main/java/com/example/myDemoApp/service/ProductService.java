@@ -40,4 +40,14 @@ public class ProductService {
         products.set(index, product);
         return "Product updated successfully";
     }
+
+    public String deleteProduct(int prodId) {
+        int index = helper.getProductIndex(products,prodId);
+        System.out.println(index);
+        if(index == -1){
+            return "Product not found";
+        }
+        products.remove(index);
+        return "Product deleted successfully";
+    }
 }

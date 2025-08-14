@@ -38,5 +38,11 @@ public class ProductController {
         return productService.updateProduct(product);
     }
 
+    @DeleteMapping("/products/{prodID}")
+    public String deleteProduct(@PathVariable int prodID) {
+        System.out.println("Not working");
+        return productService.deleteProduct(prodID);
+    }
+
 
 }
