@@ -19,10 +19,11 @@ public class SecurityConfig {
         http.csrf(customiser->customiser.disable());
         //AUthenticate all requests
         http.authorizeHttpRequests(authorizeRequests -> authorizeRequests.anyRequest().authenticated());
-        //web login form
-        http.formLogin(Customizer.withDefaults());
         //http basic from other clients
         http.httpBasic(Customizer.withDefaults());
+        //Making stateless
+        http.sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+
         return http.build();
     }
 }
