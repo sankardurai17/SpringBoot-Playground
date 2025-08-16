@@ -1,5 +1,6 @@
-package com.example.SpringSecurityDemo;
+package com.example.SpringSecurityDemo.service;
 
+import com.example.SpringSecurityDemo.model.Student;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

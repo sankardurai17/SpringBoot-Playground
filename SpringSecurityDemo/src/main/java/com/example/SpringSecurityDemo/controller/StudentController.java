@@ -1,5 +1,7 @@
-package com.example.SpringSecurityDemo;
+package com.example.SpringSecurityDemo.controller;
 
+import com.example.SpringSecurityDemo.service.StudentService;
+import com.example.SpringSecurityDemo.model.Student;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
