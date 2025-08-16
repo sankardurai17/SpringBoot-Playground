@@ -13,6 +13,4 @@ public class HelloController {
     public ResponseEntity<?> greeting(HttpServletRequest request) {
         return ResponseEntity.ok("Welcome to My Spring Security Demo " + request.getSession().getId());
     }
-
-
 }
