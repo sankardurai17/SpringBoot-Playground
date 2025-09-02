@@ -45,4 +45,12 @@ public class ProductService {
        productRepository.deleteById(prodId);
         return "Product deleted successfully";
     }
+
+    public List<Product> getProductByName(String name) {
+       List<Product> products=productRepository.getProductByProdName(name);
+        if(products==null){
+            return new ArrayList<>(Arrays.asList(new Product(0,"No Product Found",0)));
+        }
+        return products;
+    }
 }

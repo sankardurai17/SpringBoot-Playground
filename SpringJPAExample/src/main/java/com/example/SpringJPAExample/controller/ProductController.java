@@ -3,6 +3,8 @@ package com.example.SpringJPAExample.controller;
 import com.example.SpringJPAExample.model.Product;
 import com.example.SpringJPAExample.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,6 +30,13 @@ public class ProductController {
     public Product getProductByID(@PathVariable int prodId) {
         return productService.getProductByID(prodId);
     }
+
+
+    @GetMapping("/products/prodbyName")
+    public ResponseEntity getProductByName(@RequestParam String prodName) {
+        return new ResponseEntity(productService.getProductByName(prodName), HttpStatus.OK);
+    }
+
 
     @PostMapping("/products")
     public String addProduct(@RequestBody Product product) {
